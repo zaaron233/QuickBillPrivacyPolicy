@@ -1,119 +1,314 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>QuickBill Privacy Policy</title>
   <style>
+    :root {
+      color-scheme: light;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
     body {
-      max-width: 760px;
-      margin: 48px auto;
-      padding: 0 24px 48px;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      line-height: 1.65;
+      max-width: 820px;
+      margin: 0 auto;
+      padding: 44px 24px 64px;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI",
+        "PingFang SC", "Microsoft YaHei", Helvetica, Arial, sans-serif;
+      line-height: 1.7;
+      color: #1d1d1f;
+      background: #ffffff;
+    }
+
+    .topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 26px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid #e5e5ea;
+    }
+
+    .app-name {
+      font-size: 17px;
+      font-weight: 650;
+      letter-spacing: -0.01em;
       color: #1d1d1f;
     }
 
+    .language-switch {
+      display: inline-flex;
+      padding: 3px;
+      border-radius: 10px;
+      background: #f2f2f7;
+      border: 1px solid #e5e5ea;
+    }
+
+    .language-switch button {
+      border: 0;
+      border-radius: 7px;
+      padding: 7px 12px;
+      font-size: 14px;
+      font-weight: 600;
+      color: #6e6e73;
+      background: transparent;
+      cursor: pointer;
+      transition: background 0.18s ease, color 0.18s ease, box-shadow 0.18s ease;
+    }
+
+    .language-switch button.active {
+      color: #0a66d8;
+      background: #ffffff;
+      box-shadow: 0 1px 4px rgba(0, 0, 0, 0.10);
+    }
+
     h1 {
-      margin-bottom: 4px;
+      margin: 0 0 4px;
+      font-size: 34px;
+      line-height: 1.2;
+      letter-spacing: -0.03em;
     }
 
     h2 {
-      margin-top: 28px;
+      margin: 30px 0 8px;
       font-size: 20px;
+      line-height: 1.35;
+    }
+
+    p {
+      margin: 8px 0;
     }
 
     .date {
+      margin-top: 0;
       color: #6e6e73;
+    }
+
+    a {
+      color: #0a66d8;
+    }
+
+    .policy-section {
+      display: none;
+    }
+
+    .policy-section.active {
+      display: block;
+    }
+
+    @media (max-width: 560px) {
+      body {
+        padding: 28px 18px 48px;
+      }
+
+      .topbar {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      h1 {
+        font-size: 30px;
+      }
     }
   </style>
 </head>
 <body>
-  <h1>Privacy Policy for QuickBill</h1>
-  <p class="date">Effective Date: June 2, 2026</p>
+  <div class="topbar">
+    <div class="app-name">QuickBill</div>
+    <div class="language-switch" role="group" aria-label="Language selector">
+      <button type="button" id="btn-en" class="active" onclick="switchLanguage('en')">English</button>
+      <button type="button" id="btn-zh" onclick="switchLanguage('zh')">中文</button>
+    </div>
+  </div>
 
-  <p>
-    QuickBill respects your privacy. This Privacy Policy explains how
-    information is handled when you use the QuickBill mobile application.
-  </p>
+  <main>
+    <section id="policy-en" class="policy-section active" lang="en">
+      <h1>Privacy Policy for QuickBill</h1>
+      <p class="date">Effective Date: June 2, 2026</p>
 
-  <h2>1. Information You Enter into QuickBill</h2>
-  <p>
-    QuickBill allows you to record expenses, notes, categories, dates, and
-    other information related to your personal bookkeeping.
-  </p>
-  <p>
-    Your bookkeeping records are stored locally on your device. If you enable
-    iCloud synchronization, your records are also stored in your personal
-    Apple iCloud account so that they can remain synchronized across your
-    devices.
-  </p>
+      <p>
+        QuickBill respects your privacy. This Privacy Policy explains how information
+        is handled when you use the QuickBill mobile application.
+      </p>
 
-  <h2>2. iCloud Synchronization</h2>
-  <p>
-    QuickBill uses Apple's iCloud service to provide synchronization between
-    devices signed in to your iCloud account.
-  </p>
-  <p>
-    Your synchronized records are stored in your personal iCloud account.
-    QuickBill does not operate a separate server for storing your bookkeeping
-    records.
-  </p>
-  <p>
-    Your use of iCloud is subject to Apple's applicable terms and privacy
-    practices.
-  </p>
+      <h2>1. Information You Enter into QuickBill</h2>
+      <p>
+        QuickBill allows you to record expenses, notes, categories, dates, and other
+        information related to your personal bookkeeping.
+      </p>
+      <p>
+        Your bookkeeping records are stored locally on your device. If you enable
+        iCloud synchronization, your records are also stored in your personal Apple
+        iCloud account so that they can remain synchronized across your devices.
+      </p>
 
-  <h2>3. Developer Access to Your Records</h2>
-  <p>
-    QuickBill does not use your bookkeeping records for advertising,
-    marketing, user profiling, or tracking.
-  </p>
-  <p>
-    The developer does not sell, rent, or disclose your bookkeeping records
-    to third parties.
-  </p>
+      <h2>2. iCloud Synchronization</h2>
+      <p>
+        QuickBill uses Apple's iCloud service to provide synchronization between
+        devices signed in to your iCloud account.
+      </p>
+      <p>
+        Your synchronized records are stored in your personal iCloud account.
+        QuickBill does not operate a separate server for storing your bookkeeping
+        records.
+      </p>
+      <p>
+        Your use of iCloud is subject to Apple's applicable terms and privacy practices.
+      </p>
 
-  <h2>4. Third-Party Services</h2>
-  <p>
-    QuickBill does not use third-party advertising services or tracking
-    technologies.
-  </p>
-  <p>
-    QuickBill uses Apple's iCloud service solely to provide synchronization
-    functionality.
-  </p>
+      <h2>3. Developer Access to Your Records</h2>
+      <p>
+        QuickBill does not use your bookkeeping records for advertising, marketing,
+        user profiling, or tracking.
+      </p>
+      <p>
+        The developer does not sell, rent, or disclose your bookkeeping records to
+        third parties.
+      </p>
 
-  <h2>5. Data Storage and Deletion</h2>
-  <p>
-    You may delete individual records within QuickBill.
-  </p>
-  <p>
-    Records stored locally may be removed when you delete them within the app
-    or uninstall the app, subject to your device and backup settings.
-  </p>
-  <p>
-    Records synchronized through iCloud may remain available through your
-    iCloud account until they are deleted from the app or otherwise removed
-    through your iCloud settings.
-  </p>
+      <h2>4. Third-Party Services</h2>
+      <p>
+        QuickBill does not use third-party advertising services or tracking
+        technologies.
+      </p>
+      <p>
+        QuickBill uses Apple's iCloud service solely to provide synchronization
+        functionality.
+      </p>
 
-  <h2>6. Children's Privacy</h2>
-  <p>
-    QuickBill is not directed to children and does not knowingly collect
-    personal information from children.
-  </p>
+      <h2>5. Data Storage and Deletion</h2>
+      <p>
+        You may delete individual records within QuickBill.
+      </p>
+      <p>
+        Records stored locally may be removed when you delete them within the app or
+        uninstall the app, subject to your device and backup settings.
+      </p>
+      <p>
+        Records synchronized through iCloud may remain available through your iCloud
+        account until they are deleted from the app or otherwise removed through your
+        iCloud settings.
+      </p>
 
-  <h2>7. Changes to This Privacy Policy</h2>
-  <p>
-    This Privacy Policy may be updated from time to time. Any updates will be
-    posted on this page with a revised effective date.
-  </p>
+      <h2>6. Children's Privacy</h2>
+      <p>
+        QuickBill is not directed to children and does not knowingly collect personal
+        information from children.
+      </p>
 
-  <h2>8. Contact</h2>
-  <p>
-    If you have any questions about this Privacy Policy, please contact:
-    <a href="mailto:YOUR_EMAIL@example.com">QuickBillSupport@gmail.com</a>
-  </p>
+      <h2>7. Changes to This Privacy Policy</h2>
+      <p>
+        This Privacy Policy may be updated from time to time. Any updates will be
+        posted on this page with a revised effective date.
+      </p>
+
+      <h2>8. Contact</h2>
+      <p>
+        If you have any questions about this Privacy Policy, please contact:
+        <a href="mailto:QuickBillSupport@gmail.com">QuickBillSupport@gmail.com</a>
+      </p>
+    </section>
+
+    <section id="policy-zh" class="policy-section" lang="zh-CN">
+      <h1>QuickBill 隐私政策</h1>
+      <p class="date">生效日期：2026 年 6 月 2 日</p>
+
+      <p>
+        QuickBill 重视您的隐私。本隐私政策说明您在使用 QuickBill 移动应用时，
+        相关信息将如何被处理。
+      </p>
+
+      <h2>1. 您录入 QuickBill 的信息</h2>
+      <p>
+        QuickBill 允许您记录支出、备注、分类、日期以及与个人记账相关的其他信息。
+      </p>
+      <p>
+        您的记账记录会保存在您的设备本地。如果您启用了 iCloud 同步，
+        相关记录也会存储在您个人的 Apple iCloud 账户中，以便在您的设备之间保持同步。
+      </p>
+
+      <h2>2. iCloud 同步</h2>
+      <p>
+        QuickBill 使用 Apple 提供的 iCloud 服务，在登录同一 iCloud 账户的设备之间同步数据。
+      </p>
+      <p>
+        同步后的记录存储在您个人的 iCloud 账户中。QuickBill 不运营用于存储您记账记录的独立服务器。
+      </p>
+      <p>
+        您对 iCloud 的使用受 Apple 适用条款及隐私实践约束。
+      </p>
+
+      <h2>3. 开发者对记录的访问</h2>
+      <p>
+        QuickBill 不会将您的记账记录用于广告、营销、用户画像或追踪。
+      </p>
+      <p>
+        开发者不会出售、出租或向第三方披露您的记账记录。
+      </p>
+
+      <h2>4. 第三方服务</h2>
+      <p>
+        QuickBill 不使用第三方广告服务或追踪技术。
+      </p>
+      <p>
+        QuickBill 仅使用 Apple 的 iCloud 服务提供同步功能。
+      </p>
+
+      <h2>5. 数据存储与删除</h2>
+      <p>
+        您可以在 QuickBill 内删除单条记录。
+      </p>
+      <p>
+        本地存储的记录可能会在您于应用内删除记录或卸载应用时被移除，
+        具体仍受您的设备设置及备份设置影响。
+      </p>
+      <p>
+        通过 iCloud 同步的记录可能会继续保留在您的 iCloud 账户中，
+        直至您在应用内删除相关记录，或通过 iCloud 设置将其移除。
+      </p>
+
+      <h2>6. 儿童隐私</h2>
+      <p>
+        QuickBill 并非面向儿童设计，也不会在知情情况下收集儿童的个人信息。
+      </p>
+
+      <h2>7. 隐私政策更新</h2>
+      <p>
+        本隐私政策可能会不时更新。更新内容会发布在本页面，并注明新的生效日期。
+      </p>
+
+      <h2>8. 联系方式</h2>
+      <p>
+        如您对本隐私政策有任何疑问，请联系：
+        <a href="mailto:QuickBillSupport@gmail.com">QuickBillSupport@gmail.com</a>
+      </p>
+    </section>
+  </main>
+
+  <script>
+    function switchLanguage(language) {
+      const isEnglish = language === 'en';
+
+      document.getElementById('policy-en').classList.toggle('active', isEnglish);
+      document.getElementById('policy-zh').classList.toggle('active', !isEnglish);
+
+      document.getElementById('btn-en').classList.toggle('active', isEnglish);
+      document.getElementById('btn-zh').classList.toggle('active', !isEnglish);
+
+      document.documentElement.lang = isEnglish ? 'en' : 'zh-CN';
+      localStorage.setItem('quickbill-policy-language', language);
+    }
+
+    const savedLanguage = localStorage.getItem('quickbill-policy-language');
+    const browserLanguage = navigator.language || navigator.userLanguage || 'en';
+    const defaultLanguage = savedLanguage || (browserLanguage.toLowerCase().startsWith('zh') ? 'zh' : 'en');
+
+    switchLanguage(defaultLanguage);
+  </script>
 </body>
 </html>
